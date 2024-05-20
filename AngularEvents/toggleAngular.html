@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <button ng-click="myFunc()">Vajuta mind</button>
+
+        <div ng-show="showMe">
+            <h1>Vegetables:</h1>
+            <div>Carrot</div>
+            <div>Cucumber</div>
+            <div>Tomato</div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.showMe = false;
+            $scope.myFunc = function() {
+                $scope.showMe = !$scope.showMe;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    
+    <div data-ng-app="" data-ng-init="quantity=1;price=5">
+
+        <h2>Kalkulaator</h2>
+
+        Kogus: <input type="number" ng-model="quantity">
+        Hind: <input type="number" ng-model="price">
+
+        <p><b>Hind eurodes:</b>  {{quantity * price}}</p>
+    </div>
+</body>
+</html>

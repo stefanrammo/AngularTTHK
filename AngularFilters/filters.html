@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="nameCtrl">
+        <p>Nimi on {{lastName | uppercase}}</p>
+
+        <p>Esimene täht on suur ja ülejäänud väiksed.</p>
+        <p>Eesnimi on {{firstName[0].toUpperCase() + 
+            firstName.substr(1).toLowerCase()}}
+        </p>
+    </div>
+
+    <p>
+        Angular pakkub filtreid andmete kuju muutmiseks:
+        currency, date, filter, json, limitTo, lowercase,
+        number, orderby ja uppercase.
+    </p>
+    <script>
+        angular.module('myApp', []).controller('nameCtrl', function($scope){
+            $scope.firstName = "kaLLe",
+            $scope.lastName = "Smith"
+        });
+    </script>
+</body>
+</html>

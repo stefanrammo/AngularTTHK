@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    Mis on Angular DOM???
+    See on dokumendi objektimudel
+    Mis sellega saab teha?
+    Vaate muutmist saab teha.
+    Mis on mõeldud vaate muutmise all?
+    Saame objekte luua ja neid välja kutsuda 
+    ning jäävad lokaalsesse mällu.
+
+    <div ng-app="" ng-init="switch=true">
+        <p>
+            <button ng-disabled="switch">Click me</button>
+        </p>
+        <p>
+            <input type="checkbox" ng-model="switch">Button
+        </p>
+        <p>
+            {{switch}}
+        </p>
+
+        <p ng-show="true">
+            Ma olen autos
+        </p>
+
+        <p ng-show="false">
+            Ma ei ole autos
+        </p>
+
+        <p ng-hide="true">
+            Ma olen autos 2
+        </p>
+
+        <p ng-hide="false">
+            Ma ei ole autos 2
+        </p>
+    </div>
+</body>
+</html>

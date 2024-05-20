@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    
+    <form ng-app="" name="myForm" ng-init="myText = 'post@myweb.com'">
+        Email:
+        <input type="email" name="myAddress" ng-model="myText" required>
+        <p>Sisesta email ja proovi muuta staatust.</p>
+        <h1>Staatus</h1>
+        <p>Valid: {{myForm.myAddress.$valid}} (if true, the value meets criteria).</p>
+        <p>Dirty: {{myForm.myAddress.$dirty}} (if true, the value has been changed).</p>
+        <p>Touched: {{myForm.myAddress.$touched}} (if true, the field has been in focus).</p>
+        <p>
+            Angularis on olemas: ng-empty, ng-not-empty, ng-touched, ng-untouched,
+            ng-valid, ng-invalid, ng-dirty, ng-pending, ng-pristine
+        </p>
+    </form>
+</body>
+</html>

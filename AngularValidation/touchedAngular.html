@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="">
+    <p>Proovi jätta input väli tühjaks</p>
+
+    <form name="myForm">
+        <p>Nimi:
+            <input name="myName" ng-model="myName" required>
+            <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">
+                Nimi on kohustuslik
+            </span>
+        </p>
+
+        <p>Aadress:
+            <input name="myAddress" ng-model="myAddress" required>
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="" ng-init="person={firstName:'AsdAsd', lastname:'QwertyQwerty'};
+    points=[1,15,18,5,37]">
+        <p>The name is {{person.lastname}}</p>
+
+        Teha sama tulemus ja kasutada bind-i
+
+        <p>Minu nimi on <span ng-bind="person.lastname"></span></p>
+
+        <p>Neljas tulemus on {{points[3]}}</p>
+
+        <p>Neljas tulemus on <span ng-bind="points[3]"></span></p>
+
+        Angulari Expressioneid saab kirjutada html-i faili 
+    </div>
+</body>
+</html>

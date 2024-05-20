@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="userCtrl">
+    <div class="">
+        <h3>Users</h3>
+
+        <table class="">
+            <tr>
+                <th>Edit</th>
+                <th>Eesnimi</th>
+                <th>Perekonnanimi</th>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td>
+                    <button class="" ng-click="editUser(user.id)">Edit</button>
+                </td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+            </tr>
+        </table>
+        <br />
+        <button class="" ng-click="editUser('new')">Create New User</button>
+
+        <form ng-hide="hideform">
+            <h3 ng-show="edit">Create New User:</h3>
+            <h3 ng-hide="edit">Edit User:</h3>
+                <label>First name:</label>
+                <input class="" type="text" ng-model="firstName" ng-disabled="!edit" placeholder="First Name">
+                <br>
+                <label>Last name:</label>
+                <input class="" type="text" ng-model="lastName" ng-disabled="!edit" placeholder="Last Name">
+                <br>
+                <label>Password:</label>
+                <input class="" type="password" ng-model="password1" placeholder="Password">
+                <br>
+                <label>Repeat:</label>
+                <input class="" type="password" ng-model="password2" placeholder="Repeat Password">
+                <br>
+                <button class="" ng-disabled="error || incomplete">Save Changes</button>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

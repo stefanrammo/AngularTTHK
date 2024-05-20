@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    
+    <p>Mouse move</p>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1 ng-mousemove="count = count + 1">Liiguta hiirt üle teksti</h1>
+
+        <h2>{{count}}</h2>
+
+        <p>Mouse click</p>
+        <button ng-click="count1 = count1 + 1">Vajuta siia</button>
+
+        <h2>{{count1}}</h2>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.count = 0;
+        });
+    </script>
+</body>
+</html>

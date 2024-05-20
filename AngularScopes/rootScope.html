@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    
+    <p>RootScope värv:</p>
+    <h1>{{carColor}}</h1>
+
+    <div ng-controller="myCtrl">
+        <p>RootScope controlleri lemmikvärv on ikka:</p>
+        <h1>{{carColor}}</h1>     
+    </div>
+
+    <p>RootScope värv on ikka:</p>
+    <h1>{{carColor}}</h1>
+
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.run(function($rootScope) {
+            $rootScope.carColor = "blue";
+        });
+        app.controller('myCtrl', function($scope){
+            $scope.carColor = "grey";
+        });
+    </script>
+</body>
+</html>

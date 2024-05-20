@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <style>
+        table, th, td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        table tr:nth-child(odd) {
+            background-color: #f28232;
+        }
+        table tr:nth-child(even) {
+            background-color: #14057f;
+        }
+    </style>
+</head>
+<body>
+    
+    <table ng-app="myApp" ng-controller="peopleCtrl">
+        <tr ng-repeat="name in names">
+            <td>{{name.Name}}</td>
+            <td>{{name.City}}</td>
+            <td>{{name.Country}}</td>
+        </tr>
+    </table>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('peopleCtrl', function($scope, $http) {
+            $http.get("people.json")
+            .then(function (response) {$scope.names = response.data.records;});
+        });
+    </script>
+</body>
+</html>

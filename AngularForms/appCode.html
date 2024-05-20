@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="formCtrl">
+        <form novalidate>
+            Eesnimi:<br />
+            <input type="text" ng-model="user.firstName"><br />
+            Perekonnanimi:<br />
+            <input type="text" ng-model="user.lastName"><br />
+            <br />
+            <br />
+            <button ng-click="reset()">RESET</button>
+        </form>
+        <p>form = {{user}}</p>
+        <p>master = {{master}}</p>
+    </div>
+    
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('formCtrl', function($scope) {
+            $scope.master = {firstName: "Max", lastName:"Planck"};
+            $scope.reset = function() {
+                $scope.user = angular.copy($scope.master);
+            };
+            $scope.reset();
+        });
+    </script>
+</body>
+</html>
